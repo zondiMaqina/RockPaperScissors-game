@@ -7,6 +7,10 @@
         Rock Paper Scissors | Home
     </title>
     <link rel="stylesheet" href="./style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">         
 </head>
 <body>
    <h1 id="welcome">
@@ -49,15 +53,17 @@
                Good Luck !!!
             </p>
 
-            <button onclick="startGame()">Start Game</button>
+            <div class="buttons">
+               <button onclick="startGame()">Start Game</button>
 
-            <div class="input-section">
+               <div class="input-section">
 
-                <input type="text" placeholder="Enter your approach" id="input">
-                
-                <button onclick="submit()">Check</button>
+                  <input type="text" placeholder="Enter your approach" id="input">
+                  
+                  <button onclick="submit()">Check</button>
+              </div>
+              <button onclick="retry()">Retry</button>  
             </div>
-            <button onclick="retry()">Retry</button>
             <h3 id="text">
 
             </h3>
