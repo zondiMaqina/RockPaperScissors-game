@@ -23,6 +23,7 @@ h1{
     margin-bottom: 15px;
     min-width: 300px;
     color: #ccd5ae;
+    font-size: 1.5rem;
 }
 
 section, main, h2, .status, .info, .input-section, .buttons{
@@ -228,10 +229,29 @@ button:hover{
 
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 900px){
 
     body{
-        display: none;
-        padding: none;
+       display: flex;
+       flex-direction: column;
+       gap: 20px;
+       justify-content: none;
+       align-items: center;
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left{
+        border-radius: 0;
+        border-radius: 10px 10px 0 0;
+        width: 100%;
+        border: none;
+    }
+
+    .right{
+        border: none;
     }
 }
