@@ -116,7 +116,8 @@ function submit(){
 
 function retry(){
     textResults.textContent = " ";
-
+    totalPoints = 0;
+    
     if (rounds.textContent == 0 && isOver){
 
         welcomePage.textContent = response;
