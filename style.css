@@ -35,12 +35,25 @@ section, main, h2, .status, .info, .input-section, .buttons{
     padding: 5px;
     letter-spacing: 1.5px;
     border-radius: 5px;
+    color: #8d99ae;
+    background-color: #edf2f418;
+}
+
+
+a{
+    color: #e5e5e5;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #48cae4;
 }
 
 .right p:nth-child(2){
     border-bottom: 1px solid;
     border-top: 1px solid;
     padding: 4px;
+    color: #938948;
 }
 
 main{
@@ -74,6 +87,8 @@ input{
     padding-left: 5px;
     border: none;
     border-bottom: 1px solid;
+    background-color: #8d99ae48;
+    color: white;
 }
 
 #computor-choice, #user-choice{
@@ -154,6 +169,7 @@ input{
 .input-section button{
     width: 100%;
     border-radius: 0 5px 5px 0;
+    padding: 5px;
 }
 
 button{
@@ -185,4 +201,37 @@ button:hover{
     background-color: #79061956;
     padding: 5px;
     color: #8d99ae;
+    min-height: 25px;
+}
+
+#user-choice:hover, #computor-choice:hover, .status:hover, #state:hover{
+    filter: brightness(120%);
+    cursor: pointer;
+    border: 1px solid rgba(240, 255, 255, 0.363);
+}
+
+.buttonOne{
+    background-color: #14213d5a;
+    color: #d6ccc2;
+    border:1px solid #e5e5e562 ;
+}
+
+.buttonTwo{
+    background-color: #fca2113c;
+    color: #fb8500;
+
+}
+
+.buttonThree{
+    background-color: #606c3854;
+    color: #84df1d;
+
+}
+
+@media screen and (max-width: 500px){
+
+    body{
+        display: none;
+        padding: none;
+    }
 }
