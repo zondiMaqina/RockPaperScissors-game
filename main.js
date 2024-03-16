@@ -16,9 +16,8 @@
 //  game is restarted
 //  points are reset
 //  rounds reset
+//  choice is removed
 // user enters number of rounds
- 
-
 
 // DOM
 // if game is started
@@ -29,3 +28,4 @@
 //  background is green
 // if no point gained 
 //  screen is red
+
