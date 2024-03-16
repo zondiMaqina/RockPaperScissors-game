@@ -6,3 +6,126 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+h1{
+    text-align: center;
+    margin: 10px;
+}
+
+.main, .section, .last-content, .winner{
+    border: 1px solid;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.flex{
+    display: flex;
+    border: 1px solid;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+}
+
+.rounds{
+    border: 1px solid;
+    min-width: 150px;
+    height: 100px;
+    max-width: 200px;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.computor, .user{
+    border: 1px solid;
+    width: 100%;
+    min-height: 150px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.winner{
+    min-width: 250px;
+    max-width: 320px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0 auto ;
+}
+
+.winner span:nth-child(1){
+    font-weight: bold;
+}
+
+section:nth-child(2){
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.choices{
+    min-width: 300px;
+    max-width: 410px;
+    display: flex;
+    border: 1px solid;
+    gap: 15px ;
+    display: flex;
+    margin: 0 auto;
+}
+
+
+button{
+    width: 100%;
+    padding: 5px;
+    font-weight: bolder;
+}
+
+.gameState{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.score{
+display: flex;
+padding-inline: 5;
+gap: 5px;
+}
+
+.score h2{
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.middle{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#user-score, #computor-score{
+    font-size: 2.2em;
+}
