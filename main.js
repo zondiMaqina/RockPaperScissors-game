@@ -1,11 +1,4 @@
-// computor shows choice 
 // after each round feedback is needed
-// if player wins one round
-//  player gains one point
-// if player loses one round 
-//  computor gains one point
-// if broth player and computor draw
-//  no points earned for both
 // if rounds finished 
 //  winner is shown
 // if winner is showed 
@@ -45,8 +38,12 @@ document.querySelector("#playGame") ;
 let restartGame =
 document.querySelector("#restart") ;
 
+let check_winner =
+document.querySelector("#gameWinner")
 
 // text DOM
+let victor = 
+document.querySelector(".winner")
 let gameTitle =
 document.querySelector("header > h1") ;
 
@@ -78,7 +75,6 @@ let u_points = 0;
 
 computorPoints.textContent = c_points;
 userPoints.textContent = u_points;
-
 // computor choice
 let computorMove = function(){
 
@@ -119,6 +115,7 @@ function rockMove(){
 
     if (gameStarted && userPlayed && rounds.textContent > "0"){
 
+        // computor shows choice 
         userChoice.textContent = "rock" ;
         computorChoice.textContent =
         computor_move() ;
@@ -137,5 +134,84 @@ function rockMove(){
     }
     }
 }
-
 rock.onclick = rockMove ;
+
+function paperMove(){
+    userPlayed = true;
+
+    if (rounds.textContent > "0"){
+        rounds.textContent -= 1;
+    }
+
+    if (gameStarted && userPlayed && rounds.textContent > "0"){
+
+        userChoice.textContent = "paper" ;
+        computorChoice.textContent =
+        computor_move() ;
+    
+        if (userChoice.textContent =="paper" &&
+        computorChoice.textContent == "rock"
+    ){
+        u_points ++;
+      return  userPoints.textContent = u_points;
+    } else if (
+        userChoice.textContent =="paper" &&
+        computorChoice.textContent == "scissors"
+    ){
+        c_points ++;
+       return computorPoints.innerText = c_points;
+    }
+    }
+
+}
+
+paper.onclick = paperMove ;
+
+function scissorsMove(){
+    userPlayed = true;
+
+    if (rounds.textContent > "0"){
+        rounds.textContent -= 1;
+    }
+
+    if (gameStarted && userPlayed && rounds.textContent > "0"){
+
+        userChoice.textContent = "scissors" ;
+        computorChoice.textContent =
+        computor_move() ;
+    
+        if (userChoice.textContent =="scissors" &&
+        computorChoice.textContent == "paper"
+    ){
+        u_points ++;
+      return  userPoints.textContent = u_points;
+    } else if (
+        userChoice.textContent =="scissors" &&
+        computorChoice.textContent == "rock"
+    ){
+        c_points ++;
+       return computorPoints.innerText = c_points;
+    }
+    }
+
+}
+scissors.onclick = scissorsMove ;
+
+
+let winner = document.createElement("span");
+victor.appendChild(winner)
+
+function checkWinner(){
+
+    if (rounds.textContent <= "0" && gameStarted){
+
+        if (userPoints.textContent > computorPoints.textContent){
+            return winner.textContent = "You";
+        }else if (computorPoints.textContent > userPoints.textContent){
+            return winner.textContent = "Computor";
+        }else if (userPoints.textContent == computorPoints.textContent){
+            return winner.textContent = "No one";
+        }
+    }
+}
+check_winner.onclick = checkWinner ;
