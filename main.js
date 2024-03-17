@@ -1,8 +1,6 @@
 
 // DOM
 // if game is started
-//  every element gets ```box-shadow```
-//  game title changes color
 //  body background-color changes 
 // if point is gained 
 //  background is green
@@ -63,6 +61,18 @@ let userPlayed = false;
 let c_points = 0;
 let u_points = 0;
 
+// box-shadow
+let roundBox =
+document.querySelector(".rounds");
+
+let computorBbox =
+document.querySelector(".computor");
+
+let userBox =
+document.querySelector(".user");
+
+
+
 
 computorPoints.textContent = c_points;
 userPoints.textContent = u_points;
@@ -83,6 +93,16 @@ let computor_move = computorMove;
 // user presses "play game"
 function start_game(){
     gameStarted = true;
+
+    //  game title changes color 
+    gameTitle.setAttribute("style", "color:goldenrod");
+
+    //  every element gets ```box-shadow```
+    computorBbox.classList.add("changeBox");
+    userBox.classList.add("changeBox");
+    roundBox.classList.add("changeBox");
+
+
     if(gameStarted){
         // user enters number of rounds
         let roundAmount = 
@@ -196,10 +216,17 @@ function checkWinner(){
     if (rounds.textContent <= "0" && gameStarted){
         gameOver = true;
         if (userPoints.textContent > computorPoints.textContent){
-            return winner.textContent = "You";
+            winner.style.color = "darkgreen"
+            winner.style.fontWeight = "bolder"
+            return winner.textContent = "You!!!";
         }else if (computorPoints.textContent > userPoints.textContent){
+            winner.style.color = "darkred"
+            winner.style.fontWeight = "bolder"
             return winner.textContent = "Computor";
-        }else if (userPoints.textContent == computorPoints.textContent){
+        }else if (userPoints.textContent == 
+            computorPoints.textContent){
+                winner.style.color = "yellow"
+                winner.style.fontWeight = "bolder"
             return winner.textContent = "No one";
         }
     }
