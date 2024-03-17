@@ -29,3 +29,47 @@
 // if no point gained 
 //  screen is red
 
+// stored nodesin variables
+
+// game choices
+const rock =
+document.querySelector("#rock") ;
+
+const paper =
+document.querySelector("#paper") ;
+
+const scissors =
+document.querySelector("#scissors") ;
+
+
+// Game buttons
+const playGame =
+document.querySelector("#playGame") ;
+
+const restartGame =
+document.querySelector("#restart") ;
+
+
+// text DOM
+const gameTitle =
+document.querySelector("header > h1") ;
+
+const userPoints =
+document.querySelector("#player") ;
+
+const computorPoints =
+document.querySelector("#computor") ;
+
+const userChoice =
+document.querySelector("#user-score") ;
+
+const computorChoice =
+document.querySelector("#computor-score") ;
+
+const roundsState =
+document.querySelector("#game-state") ;
+
+// conditions 
+
+let gameStarted = false;
+let gameOver = false;
