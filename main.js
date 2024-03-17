@@ -1,7 +1,3 @@
-// user presses "play game"
-// user enters number of rounds
-// number of rounds shows
-// user chooses presses choice
 // computor shows choice 
 // after each round feedback is needed
 // if player wins one round
@@ -32,44 +28,114 @@
 // stored nodesin variables
 
 // game choices
-const rock =
+let rock =
 document.querySelector("#rock") ;
 
-const paper =
+let paper =
 document.querySelector("#paper") ;
 
-const scissors =
+let scissors =
 document.querySelector("#scissors") ;
 
 
 // Game buttons
-const playGame =
+let playGame =
 document.querySelector("#playGame") ;
 
-const restartGame =
+let restartGame =
 document.querySelector("#restart") ;
 
 
 // text DOM
-const gameTitle =
+let gameTitle =
 document.querySelector("header > h1") ;
 
-const userPoints =
+let userPoints =
 document.querySelector("#player") ;
 
-const computorPoints =
+let computorPoints =
 document.querySelector("#computor") ;
 
-const userChoice =
+let userChoice =
 document.querySelector("#user-score") ;
 
-const computorChoice =
+let computorChoice =
 document.querySelector("#computor-score") ;
 
-const roundsState =
+let roundsState =
 document.querySelector("#game-state") ;
 
-// conditions 
+let rounds = 
+document.querySelector("#round") ;
 
+// conditions 
 let gameStarted = false;
 let gameOver = false;
+let userPlayed = false;
+let c_points = 0;
+let u_points = 0;
+
+
+computorPoints.textContent = c_points;
+userPoints.textContent = u_points;
+
+// computor choice
+let computorMove = function(){
+
+    if (userPlayed){
+        let choices = ["rock", "paper", "scissors"];
+        let move = 
+        choices[Math.floor(Math.random() * choices.length)];
+    
+        return move    
+    }
+}
+let computor_move = computorMove;
+
+
+// user presses "play game"
+function start_game(){
+    gameStarted = true;
+    if(gameStarted){
+        // user enters number of rounds
+        let roundAmount = 
+        window.prompt("Enter your amount of rounds");
+
+        // number of rounds shows
+        rounds.innerText = roundAmount;
+    }
+}
+playGame.onclick = start_game;
+
+
+// user chooses presses choice
+// user chooses rock
+function rockMove(){
+    userPlayed = true;
+
+    if (rounds.textContent > "0"){
+        rounds.textContent -= 1;
+    }
+
+    if (gameStarted && userPlayed && rounds.textContent > "0"){
+
+        userChoice.textContent = "rock" ;
+        computorChoice.textContent =
+        computor_move() ;
+    
+        if (userChoice.textContent =="rock" &&
+        computorChoice.textContent == "scissors"
+    ){
+        u_points ++;
+      return  userPoints.textContent = u_points;
+    } else if (
+        userChoice.textContent =="rock" &&
+        computorChoice.textContent == "paper"
+    ){
+        c_points ++;
+       return computorPoints.innerText = c_points;
+    }
+    }
+}
+
+rock.onclick = rockMove ;
