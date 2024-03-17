@@ -1,5 +1,4 @@
 *{
-    text-transform: capitalize;
     font-family: sans-serif;
     text-decoration: none;
     margin: 0;
@@ -12,9 +11,6 @@ h1{
     margin: 10px;
 }
 
-.main, .section, .last-content, .winner{
-    border: 1px solid;
-}
 
 .section{
     display: flex;
@@ -32,14 +28,12 @@ h1{
 
 .flex{
     display: flex;
-    border: 1px solid;
     justify-content: space-around;
     align-items: center;
     gap: 15px;
 }
 
 .rounds{
-    border: 1px solid;
     width: 100%;
     height: 100px;
     border-radius: 10px;
@@ -48,10 +42,10 @@ h1{
     display: flex;
     flex-direction: column;
     gap: 15px;
+    background-color: hsla(180, 30%, 91%, 0.434);
 }
 
 .computor, .user{
-    border: 1px solid;
     width: 100%;
     min-height: 150px;
     border-radius: 10px;
@@ -60,16 +54,19 @@ h1{
     align-items: center;
     gap: 20px;
     padding: 10px;
+    background-color: hsla(0, 0%, 52%, 0.14);
+    color: darkgreen;
 }
 
 .winner{
-    min-width: 250px;
-    max-width: 320px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 5px;
     border-radius: 5px;
     margin: 0 auto ;
+    background-color: rgb(230, 228, 228);
+    padding: 8px;
+    letter-spacing: 2px;
 }
 
 .winner span:nth-child(1){
@@ -93,16 +90,47 @@ section:nth-child(2){
     margin: 0 auto;
 }
 
+.choices button{
+    background-color: darkred;
+    color: white;
+}
 
 button{
     width: 100%;
-    padding: 5px;
+    padding: 10px;
     font-weight: bolder;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+#playGame{
+    background-color: hsla(120, 100%, 25%, 0.879);
+    color: white;
+    border:2px solid rgb(9, 245, 9) ;
+}
+
+#gameWinner{
+    background-color: rgba(255, 255, 0, 0.93);
+    color: darkslategray;
+}
+
+#restart{
+    background-color: rgb(10, 10, 131);
+    color: white;
+    border: 2px solid rgb(58, 58, 239);
+}
+
+button:hover{
+    filter: brightness(110%);
 }
 
 .gameState{
     width: 70%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .score{
@@ -112,11 +140,13 @@ gap: 5px;
 }
 
 .score h2{
-    padding: 5px;
-    border: 1px solid;
+    padding: 8px;
     border-radius: 5px;
     width: 100%;
     text-align: center;
+    border-bottom: 2px solid darkgreen;
+    background-color: rgba(172, 255, 47, 0.082);
+
 }
 
 .middle{
@@ -130,6 +160,11 @@ gap: 5px;
     font-size: 1.8em;
 }
 
+.changeBox{
+    box-shadow: 0 0 5px rgb(41, 40, 40);
+}
+
+
 @media screen and (max-width: 500px){
 
     .flex{
@@ -137,3 +172,4 @@ gap: 5px;
         width: 100%;
     }
 }
+
