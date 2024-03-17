@@ -1,12 +1,3 @@
-// after each round feedback is needed
-// if rounds finished 
-//  winner is shown
-// if winner is showed 
-//  game is restarted
-//  points are reset
-//  rounds reset
-//  choice is removed
-// user enters number of rounds
 
 // DOM
 // if game is started
@@ -202,9 +193,8 @@ let winner = document.createElement("span");
 victor.appendChild(winner)
 
 function checkWinner(){
-
     if (rounds.textContent <= "0" && gameStarted){
-
+        gameOver = true;
         if (userPoints.textContent > computorPoints.textContent){
             return winner.textContent = "You";
         }else if (computorPoints.textContent > userPoints.textContent){
@@ -215,3 +205,22 @@ function checkWinner(){
     }
 }
 check_winner.onclick = checkWinner ;
+
+function retryGame(){
+    u_points = 0;
+    c_points = 0;
+    if (gameOver && gameStarted){
+
+        computorChoice.textContent = ".";
+        userChoice.textContent = ".";
+        userPoints.textContent = u_points;
+        computorPoints.textContent = c_points;
+        winner.textContent = "";
+
+        let roundAmount = 
+        window.prompt("Enter your amount of rounds");
+        rounds.innerText = roundAmount;
+        
+    }
+}
+restartGame.onclick = retryGame ;
