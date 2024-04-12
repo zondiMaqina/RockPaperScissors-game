@@ -101,7 +101,7 @@ button{
     font-weight: bolder;
     border: none;
     border-radius: 5px;
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 #playGame{
@@ -157,7 +157,7 @@ gap: 5px;
 }
 
 #user-score, #computor-score{
-    font-size: 1.8em;
+    font-size: 1.1em;
 }
 
 .changeBox{
